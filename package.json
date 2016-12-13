@@ -19,7 +19,8 @@
   "homepage": "https://github.com/MTibby92/github-battle-react-demo#readme",
   "dependencies": {
     "react": "^15.4.1",
-    "react-dom": "^15.4.1"
+    "react-dom": "^15.4.1",
+    "react-router": "^2.0.0-rc5"
   },
   "devDependencies": {
     "babel-core": "^6.20.0",
