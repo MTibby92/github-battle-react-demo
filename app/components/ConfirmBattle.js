@@ -2,6 +2,8 @@ var React = require('react')
 var PropTypes = React.PropTypes
 var styles = require('../styles')
 var Link = require('react-router').Link
+var UserDetails = require('./UserDetails')
+var UserDetailsWrapper = require('./UserDetailsWrapper')
 
 function puke(obj) {
 	return <pre>{JSON.stringify(obj, null, ' ')}</pre>
@@ -21,16 +23,14 @@ var ConfirmBattle = React.createClass({
 			:	<div className="jumbotron col-sm-12 text-center" style={styles.transparentBg}>
 					<h1>Confirm Players</h1>
 					<div className="col-sm-8 col-sm-offset-2">
-						<div className="col-sm-6">
-							<p className="lead">Player 1</p>
-							PLAYER 1 INFO
-							{puke(this.props.playersInfo[0])}
-						</div>
-						<div className="col-sm-6">
-							<p className="lead">Player 2</p>
-							PLAYER 2 INFO
-							{puke(this.props.playersInfo[1])}
-						</div>
+						<UserDetailsWrapper header="Player One">
+							{/*puke(this.props.playersInfo[0])*/}
+							<UserDetails info={this.props.playersInfo[0]} />
+						</UserDetailsWrapper>
+						<UserDetailsWrapper header="Player Two">
+							{/*puke(this.props.playersInfo[1])*/}
+							<UserDetails info={this.props.playersInfo[1]} />
+						</UserDetailsWrapper>
 					</div>
 					<div className="col-sm-8 col-sm-offset-2">
 						<div className="col-sm-12" style={styles.space}>
