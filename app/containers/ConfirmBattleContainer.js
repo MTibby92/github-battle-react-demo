@@ -28,10 +28,19 @@ var ConfirmBattleContainer = React.createClass({
 			})
 		}.bind(this)) // bind(this) forces this on line 25 to refer to the same this as line 16
 	},
+	handleInitiateBattle: function() {
+		this.context.router.push({
+			pathname: '/results',
+			state: { // sends the playersInfo array to new route
+				playerInfo: this.state.playersInfo
+			}
+		})
+	},
 	render: function() {
 		return (
 			<ConfirmBattle 
 				isLoading={this.state.isLoading}
+				onInitiateBattle={this.handleInitiateBattle}
 				playersInfo={this.state.playersInfo} />
 		)
 	}
